@@ -1,0 +1,31 @@
+.header--container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 70px;
+  z-index: 2;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  overflow: hidden;
+}
+
+.header--links {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  font-size: 17px;
+  padding: 0;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.header--color {
+  color: var(--main-blue);
+}
+
+.header--font {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}

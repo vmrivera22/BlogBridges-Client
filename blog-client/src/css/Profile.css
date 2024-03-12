@@ -1,0 +1,18 @@
+.profile--image--container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile--img--button {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+}
+
+.profile--posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,58 @@
+.post--container {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.post--created {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: rgb(138, 138, 138);
+  margin-bottom: 10px;
+}
+
+.date {
+  position: relative;
+  left: -3px;
+}
+
+.post--title {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.post--image--container {
+  margin: 20px auto 10px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(152, 151, 151);
+  overflow: hidden;
+}
+
+.post--buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  border-top: 1px solid rgb(235, 229, 229);
+}
+
+.post--icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.individual--post {
+  display: flex;
+  justify-content: center;
+}
+
+.post--body {
+  white-space: pre-wrap;
+}

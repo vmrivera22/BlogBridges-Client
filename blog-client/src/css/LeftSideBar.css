@@ -1,0 +1,30 @@
+.left--sidebar--list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+}
+
+.left--sidebar--list--link:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.left--sidebar--list--link {
+  border: 1px solid var(--border-color);
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.bg--blue {
+  background-color: var(--main-blue);
+}
+
+.blue {
+  color: var(--main-blue);
+}
+
+.side--link {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,28 @@
+.add--rule{
+    margin: 25px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.delete--btn{
+    margin-left: auto;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: auto;
+    flex-grow: 0;
+    color: rgb(244, 20, 20);
+}
+
+.delete--btn:hover{
+    background-color: var(--btn-hover-color);
+    color: black;
+}
+
+.rule--label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    color: rgb(97, 96, 96);
+    font-size: 14px;
+}

@@ -1,0 +1,21 @@
+.description--header {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.description--text {
+  font-size: 14px;
+}
+
+.description--title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.oi {
+  list-style: decimal;
+}
+.ol {
+  list-style-position: inside;
+}
