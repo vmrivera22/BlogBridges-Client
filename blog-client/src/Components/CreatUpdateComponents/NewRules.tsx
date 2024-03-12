@@ -46,13 +46,7 @@ const NewRules = ({ roomId }: Props) => {
   }
 
   // Set up the form - set rules that were already created into form.
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    control,
-    getValues,
-  } = useForm({
+  const { register, control, getValues } = useForm({
     defaultValues: {
       rules: rules,
     },
@@ -105,7 +99,7 @@ const NewRules = ({ roomId }: Props) => {
         <CardDescription>{text.description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit((data) => {})}>{RuleForm}</form>
+        <form>{RuleForm}</form>
         <button
           className="add--rule"
           onClick={() => {

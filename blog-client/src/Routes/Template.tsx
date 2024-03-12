@@ -6,8 +6,7 @@ import AnimatedOutlet from "@/AnimatedOutlet";
 
 // Component that adds a header to the website - all pages use the header - are child routes.
 const Template = () => {
-  const { isLoading, isAuthenticated, getAccessTokenSilently, user } =
-    useAuth0();
+  const { isLoading, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const { addToken } = useContext(TokenContext);
   useEffect(() => {
     const fetchData = async () => {
@@ -15,10 +14,6 @@ const Template = () => {
         if (isLoading) {
           // Wait for authetication to load.
           return <div> Loading...</div>;
-        }
-        let userName = "";
-        if (user) {
-          userName = user["https://myapp.example.com/username"];
         }
         if (isAuthenticated) {
           const accessToken = (await getAccessTokenSilently()) as string; // Get access token to send to the backend to be able to make orders.
