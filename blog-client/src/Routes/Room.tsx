@@ -59,9 +59,9 @@ const Room = () => {
 
   const windowLarge = windowDimensions.windowWidth >= 1000 ? true : false;
 
-  let currRoom: Room | undefined;
+  let currRoom;
   if (room.data && room.data.pages.length > 0) {
-    currRoom = room.data.pages[0]?.data;
+    currRoom = room.data.pages[0] && room.data.pages[0].data;
   }
 
   // State to keep track of what tab the user is on.

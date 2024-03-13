@@ -191,14 +191,14 @@ export const useDeletePostMutation = (roomId: number, indiv = false) => {
 // Mutation to delete rooms.
 export const useDeleteRoomMutation = () => {
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
   return useMutation({
     mutationFn: DeleteRoom,
     onSuccess: async () => {
       await queryClient.invalidateQueries({
         queryKey: ["rooms"],
+        refetchType: "all",
+        exact: true,
       });
-      navigate("/");
       return;
     },
   });

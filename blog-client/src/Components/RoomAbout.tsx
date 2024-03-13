@@ -8,6 +8,7 @@ import { useGetRules } from "@/utils/reactquery/Queries";
 import TokenContext from "@/TokenContext";
 import { useContext } from "react";
 import { useDeleteRoomMutation } from "@/utils/reactquery/Mutations";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   room?: Room;
@@ -22,10 +23,12 @@ const RightRoomSideBar = ({ room }: Props) => {
   // Delete a room
   const deleteRoomMutation = useDeleteRoomMutation();
 
+  const navigate = useNavigate();
   // Call delete a room mutation.
   const handleDelete = async () => {
     if (room) {
       deleteRoomMutation.mutate({ roomId: room.id, token: token });
+      navigate("/");
     }
   };
 
@@ -45,6 +48,7 @@ const RightRoomSideBar = ({ room }: Props) => {
       </li>
     );
   });
+
   return (
     <>
       <div>
