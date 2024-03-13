@@ -10,9 +10,13 @@ const GetRooms = async () => {
         },
       }
     );
-    return (await rooms.json()) as Room[];
+    if (rooms) {
+      return (await rooms.json()) as Room[];
+    }
+    return;
   } catch (e: any) {
     console.log(e.message);
+    return;
   }
 };
 
