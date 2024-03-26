@@ -48,6 +48,7 @@ const callbackFunction = (
       marginBottom: `7px`,
     };
   }
+  const { isAuthenticated } = useAuth0();
   return (
     <div key={uuid()} className="comment" style={commentStyle}>
       <div className="comment--creator">
@@ -56,23 +57,25 @@ const callbackFunction = (
       </div>
       <div className="comment--content">{item.content}</div>
       <div className="comment--buttons">
-        <AlertTrigger
-          content={
-            <NewComment
-              reply={true}
-              postId={Number(postId)}
-              parentAuthor={item.user.userName}
-              parentContent={item.content}
-              parentId={item.id}
-            />
-          }
-          trigger={
-            <label className="comment--reply">
-              <img src={arrow} /> Reply
-            </label>
-          }
-          type="reply"
-        />
+        {isAuthenticated && (
+          <AlertTrigger
+            content={
+              <NewComment
+                reply={true}
+                postId={Number(postId)}
+                parentAuthor={item.user.userName}
+                parentContent={item.content}
+                parentId={item.id}
+              />
+            }
+            trigger={
+              <label className="comment--reply">
+                <img src={arrow} /> Reply
+              </label>
+            }
+            type="reply"
+          />
+        )}
       </div>
       {item.comments &&
         item.comments.map((i) => callbackFunction(i, level + 1, postId, user))}

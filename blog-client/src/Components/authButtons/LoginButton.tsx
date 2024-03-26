@@ -9,7 +9,7 @@ const LoginButton = ({ text }: Props) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
     !isAuthenticated && (
-      <button onClick={() => loginWithRedirect()}>
+      <button className="w-full" onClick={() => loginWithRedirect()}>
         {text ? text : "Sign In"}
       </button>
     )

@@ -8,6 +8,8 @@ import back from "../assets/back.png";
 import "../css/AlertTrigger.css";
 import { useGetPost } from "@/utils/reactquery/Queries";
 import AnimatedLayout from "@/AnimatedLayout";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "@/Components/authButtons/LoginButton";
 
 // Component for the page - route of a individual Post.
 const IndividualPost = () => {
@@ -53,6 +55,7 @@ const IndividualPost = () => {
     );
   }
 
+  const { isAuthenticated } = useAuth0();
   return (
     <AnimatedLayout>
       <div className="p-[40px] h-full">
@@ -62,13 +65,21 @@ const IndividualPost = () => {
           className="w-[35px] clickable"
         />
         <div className="individual--post">{componentPost}</div>
-        <AlertTrigger
-          content={
-            <NewComment postId={Number(getPostQuery.data?.data[0].id)} />
-          }
-          trigger={<div className="w-full trig--bg">New Comment</div>}
-          type="comment"
-        />
+        {isAuthenticated ? (
+          <AlertTrigger
+            content={
+              <NewComment postId={Number(getPostQuery.data?.data[0].id)} />
+            }
+            trigger={<div className="w-full trig--bg">New Comment</div>}
+            type="comment"
+          />
+        ) : (
+          <div className="w-full individual--post">
+            <div className="trig--bg text-center w-full max-w-[850px]">
+              <LoginButton text="New Comment" />
+            </div>
+          </div>
+        )}
         <div className="comments--container">
           <Comments postId={Number(id)} />
         </div>
